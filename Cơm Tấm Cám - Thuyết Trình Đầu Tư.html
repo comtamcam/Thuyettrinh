@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)https://page.genspark.site/page/toolu_017c7qmr5epFnbn2gKdv5b1W/com_tam_cam_interactive_presentation.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơm Tấm Cám - Thuyết Trình Đầu Tư</title>
+    <link href="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/all.min.css">
+    <link href="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/css2" rel="stylesheet">
+    <script src="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/chart.min.js"></script>
+    <style>
+        :root {
+            --teal-primary: #20B2AA;
+            --teal-dark: #008B8B;
+            --teal-light: #7FFFD4;
+            --orange-accent: #FF8C00;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .bg-teal-primary {
+            background-color: var(--teal-primary);
+        }
+        
+        .bg-teal-dark {
+            background-color: var(--teal-dark);
+        }
+        
+        .bg-teal-light {
+            background-color: var(--teal-light);
+        }
+        
+        .text-teal-primary {
+            color: var(--teal-primary);
+        }
+        
+        .text-teal-dark {
+            color: var(--teal-dark);
+        }
+        
+        .border-teal-primary {
+            border-color: var(--teal-primary);
+        }
+        
+        .text-orange-accent {
+            color: var(--orange-accent);
+        }
+        
+        .bg-orange-accent {
+            background-color: var(--orange-accent);
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://gensparkpublicblob.blob.core.windows.net/user-upload-image/v1/base64_upload/43dbb2f1186d298f749717a6d09cbe46');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        .section-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .section-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e9ecef;
+            background-color: rgba(32, 178, 170, 0.1);
+        }
+        
+        .section-body {
+            padding: 20px;
+        }
+        
+        .detail-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .founder-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--teal-primary);
+        }
+        
+        .btn-detail {
+            background-color: var(--teal-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-detail:hover {
+            background-color: var(--teal-dark);
+        }
+        
+        .metric-card {
+            background-color: rgba(32, 178, 170, 0.1);
+            border-left: 4px solid var(--teal-primary);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .metric-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--teal-dark);
+        }
+        
+        .phase-card {
+            border-left: 4px solid var(--orange-accent);
+            padding: 16px;
+            background-color: rgba(255, 140, 0, 0.1);
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 24px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--teal-primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            bottom: -24px;
+            width: 2px;
+            background-color: var(--teal-primary);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        
+        table.data-table th, 
+        table.data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        table.data-table th {
+            background-color: rgba(32, 178, 170, 0.1);
+            font-weight: 600;
+        }
+        
+        table.data-table tr:hover {
+            background-color: rgba(32, 178, 170, 0.05);
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--teal-dark);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .print-button:hover {
+            transform: scale(1.1);
+            background-color: var(--teal-primary);
+        }
+        
+         {
+            .detail-section {
+                max-height: none !important;
+                display: block !important;
+            }
+            
+            .btn-detail, .print-button {
+                display: none !important;
+            }
+            
+            .section-card {
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            body {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero-section py-16 mb-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center text-center">
+                <h1 class="text-4xl font-bold mb-4">CƠM TẤM CÁM</h1>
+                <h2 class="text-2xl mb-6">Cơ Hội Đầu Tư Mở Rộng</h2>
+                <div class="bg-white text-gray-800 px-6 py-2 rounded-full inline-block">
+                    <span class="font-medium">Thành lập: 15/06/2024</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pb-20">
+        <!-- Introduction to the Team and Restaurant -->
+        <section class="mb-12">
+            <div class="section-card">
+                <div class="section-header flex justify-between items-center">
+                    <h3 class="text-xl font-bold">GIỚI THIỆU VỀ ĐỘI NGŨ VÀ NHÀ HÀNG</h3>
+                    <button class="btn-detail" onclick="toggleSection(&#39;team-detail&#39;)">Xem Chi Tiết <i class="fas fa-chevron-down"></i></button>
+                </div>
+                
+                <div class="section-body">
+                    <!-- Summary Section -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <div class="flex flex-col items-center">
+                            <img src="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/cbd3b8e3655f26fabcf577152245a2f7" alt="Trần Tuấn Anh" class="founder-image mb-4">
+                            <h4 class="text-lg font-semibold">Trần Tuấn Anh</h4>
+                            <p class="text-center text-gray-600">Nhà Sáng Lập &amp; Người Kiến Tạo Tầm Nhìn</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="./Cơm Tấm Cám - Thuyết Trình Đầu Tư_files/c78a23d1648139316f680d628d5273a1" alt="Vy" class="founder-image mb-4">
+                            <h4 class="text-lg font-semibold">Vy</h4>
+                            <p class="text-center text-gray-600">Tổng Quản Lý &amp; Bếp Trưởng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="metric-card">
+                            <p class="text-gray-600">Đơn Hàng Tại Chỗ (3 tháng)</p>
+                            <div class="metric-number">11,000+</div>
+                            <p class="text-sm text-gray-500">~3,600+ đơn/tháng</p>
+                        </div>
+                        <div class="metric-card">
+                            <p class="text-gray-600">Đơn Hàng Online (3 tháng)</p>
+                            <div class="metric-number">33,000+</div>
+                            <p class="text-sm text-gray-500">~11,000+ đơn/tháng</p>
+                        </div>
+                        <div class="metric-card">
+                            <p class="text-gray-600">Đánh Giá Khách Hàng</p>
+                            <div class="metric-number">4.7/5 <span class="text-yellow-500"><i class="fas fa-star"></i></span></div>
+                            <p class="text-sm text-gray-500">Từ 2,000+ đánh giá</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-green-500 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-semibold text-green-700">Đạt điểm hòa vốn từ tháng 11/2024</h4>
+                                <p class="text-green-600">Chỉ sau 5 tháng hoạt động</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Section -->
+                <div id="team-detail" class="detail-section" style="">
+                    <div class="border-t border-gray-200 p-6">
+                        <h4 class="text-lg font-semibold mb-4">THÔNG TIN CHI TIẾT VỀ ĐỘI NGŨ</h4>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-2">Trần Tuấn Anh</h5>
+                            <p class="mb-3">Doanh nhân tự thân với hơn 10 năm kinh nghiệm xây dựng và quản lý các mô hình kinh doanh.</p>
+                            <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                <li>5 năm thành công trong lĩnh vực phân phối và bán sỉ iPhone, iPad (2010-2015)</li>
+                                <li>4 năm làm Tổng Quản lý tại World of Pool Billiards, câu lạc bộ bida lớn nhất Sài Gòn</li>
+                                <li>Chuyên môn: phát triển chiến lược, quản lý vận hành, xây dựng đội ngũ và phát triển thương hiệu</li>
+                            </ul>
+                            <p class="text-gray-700"><strong>Liên hệ:</strong> 0963077733 | comtamcamcn1@gmail.com</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-2">Vy</h5>
+                            <p class="mb-3">Trái tim và linh hồn của Cơm Tấm Cám, đảm nhiệm đồng thời vai trò tổng quản lý và bếp trưởng.</p>
+                            <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                <li>Kinh nghiệm quản lý từ lĩnh vực bán lẻ thiết bị di động</li>
+                                <li>Niềm đam mê nấu nướng và năng khiếu bẩm sinh đã được minh chứng qua hiệu suất kinh doanh</li>
+                                <li>Trực tiếp phát triển thực đơn, chế biến món ăn với chất lượng cao</li>
+                                <li>Được khách hàng đánh giá cao về tài năng nấu nướng và quản lý hiệu quả</li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-4 mt-8">THÔNG TIN CHI TIẾT VỀ NHÀ HÀNG</h4>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-teal-dark mb-2">Mô Hình Kinh Doanh</h5>
+                            <p class="mb-3">Cơm Tấm Cám áp dụng mô hình kinh doanh tập trung vào một món ăn chủ đạo nhưng đa dạng về biến thể, phục vụ cả tại chỗ và giao hàng.</p>
+                            <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                <li>Tập trung vào cơm tấm chất lượng cao với nhiều lựa chọn cho khách hàng</li>
+                                <li>Áp dụng công nghệ vào vận hành qua Zalo Mini App và các nền tảng giao hàng</li>
+                                <li>Định vị trong phân khúc giá trung bình-cao, nhắm đến đối tượng văn phòng và tầng lớp trung lưu</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-teal-dark mb-2">Phân Tích Doanh Thu Theo Tháng</h5>
+                            <div class="chart-container">
+                                <canvas id="revenueChart" width="1200" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1200px;"></canvas>
+                            </div>
+                            
+                            <div class="overflow-x-auto mt-4">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tháng</th>
+                                            <th>Doanh Thu</th>
+                                            <th>Đơn Tại Chỗ</th>
+                                            <th>Đơn Online</th>
+                                            <th>Lợi Nhuận</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>T7/2024</td>
+                                            <td>106 triệu</td>
+                                            <td>~1,200</td>
+                                            <td>~4,000</td>
+                                            <td class="text-red-500">-132 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T8/2024</td>
+                                            <td>150 triệu</td>
+                                            <td>~1,800</td>
+                                            <td>~6,000</td>
+                                            <td class="text-red-500">-89 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T9/2024</td>
+                                            <td>151 triệu</td>
+                                            <td>~2,000</td>
+                                            <td>~7,000</td>
+                                            <td class="text-red-500">-75 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T10/2024</td>
+                                            <td>192 triệu</td>
+                                            <td>~2,400</td>
+                                            <td>~8,000</td>
+                                            <td class="text-red-500">-27 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T11/2024</td>
+                                            <td>310 triệu</td>
+                                            <td>~3,600</td>
+                                            <td>~11,000</td>
+                                            <td class="text-green-500">30 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T12/2024</td>
+                                            <td>381 triệu</td>
+                                            <td>~4,000</td>
+                                            <td>~12,000</td>
+                                            <td class="text-green-500">67 triệu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T1/2025</td>
+                                            <td>359 triệu</td>
+                                            <td>~3,800</td>
+                                            <td>~11,500</td>
+                                            <td class="text-green-500">35 triệu</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-teal-dark mb-2">Chỉ Số Khách Hàng</h5>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Tỷ lệ khách quay lại</h6>
+                                    <div class="text-3xl font-bold text-teal-dark mb-2">30%</div>
+                                    <p class="text-gray-600">Cao hơn mức trung bình ngành (20-25%)</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Giá trị trung bình mỗi đơn hàng</h6>
+                                    <div class="text-3xl font-bold text-teal-dark mb-2">85,000 VNĐ</div>
+                                    <p class="text-gray-600">Cao hơn 15% so với đối thủ cạnh tranh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funding Opportunity -->
+        <section class="mb-12">
+            <div class="section-card">
+                <div class="section-header flex justify-between items-center">
+                    <h3 class="text-xl font-bold">CƠ HỘI ĐẦU TƯ</h3>
+                    <button class="btn-detail" onclick="toggleSection(&#39;funding-detail&#39;)">Thu Gọn <i class="fas fa-chevron-up"></i></button>
+                </div>
+                
+                <div class="section-body">
+                    <!-- Summary Section -->
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold mb-4">Cơ Hội Đầu Tư - Giai Đoạn 1 (Hạt Mầm)</h4>
+                        
+                        <div class="grid md:grid-cols-4 gap-4 mb-6">
+                            <div class="phase-card">
+                                <p class="text-gray-700">Vốn gọi đầu tư</p>
+                                <div class="text-2xl font-bold text-orange-accent">2 tỷ VND</div>
+                            </div>
+                            <div class="phase-card">
+                                <p class="text-gray-700">Tỷ lệ cổ phần</p>
+                                <div class="text-2xl font-bold text-orange-accent">25%</div>
+                            </div>
+                            <div class="phase-card">
+                                <p class="text-gray-700">Phạm vi đầu tư</p>
+                                <div class="text-2xl font-bold text-orange-accent">Chi nhánh 2</div>
+                            </div>
+                            <div class="phase-card">
+                                <p class="text-gray-700">Dự kiến hoàn vốn</p>
+                                <div class="text-2xl font-bold text-orange-accent">18-24 tháng</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold mb-2">Cơ Cấu Quản Trị</h5>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Quyền biểu quyết tương ứng với tỷ lệ sở hữu</li>
+                                    <li>1 ghế cho nhà đầu tư (với 25% cổ phần)</li>
+                                    <li>Quyết định chiến lược cần 75% phiếu đồng thuận</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold mb-2">Quyền Lợi Nhà Đầu Tư</h5>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Cổ tức chia theo tỷ lệ góp vốn</li>
+                                    <li>Ưu tiên trong các đợt gọi vốn tiếp theo</li>
+                                    <li>Nhận báo cáo tài chính và hoạt động đầy đủ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Section -->
+                <div id="funding-detail" class="detail-section" style="max-height: 2770px;">
+                    <div class="border-t border-gray-200 p-6">
+                        <h4 class="text-lg font-semibold mb-4">CHI TIẾT CƠ HỘI ĐẦU TƯ</h4>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Giai Đoạn 1 (Hạt Mầm): Chi nhánh 2</h5>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-semibold">Cơ Cấu Quản Trị Chi Tiết</h6>
+                                <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                    <li><strong>Quyền biểu quyết:</strong> Tương ứng với tỷ lệ sở hữu</li>
+                                    <li><strong>Hội đồng quản trị:</strong> 1 ghế cho nhà đầu tư (với 25% cổ phần)</li>
+                                    <li><strong>Quyết định chiến lược:</strong> Cần đạt 75% phiếu đồng thuận, bao gồm:
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li>Thay đổi cơ cấu vốn</li>
+                                            <li>Điều chỉnh mô hình kinh doanh</li>
+                                            <li>Đầu tư vượt quá ngân sách đã duyệt</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Quyết định vận hành:</strong> Do ban điều hành thực hiện</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-semibold">Quyền Lợi Nhà Đầu Tư Chi Tiết</h6>
+                                <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                    <li><strong>Cổ tức:</strong> Chia theo tỷ lệ góp vốn, chi trả định kỳ hàng quý sau khi hoàn vốn</li>
+                                    <li><strong>Quyền ưu tiên đầu tư:</strong> Trong các đợt gọi vốn tiếp theo với điều kiện ưu đãi</li>
+                                    <li><strong>Quyền thông tin:</strong> Báo cáo tài chính và hoạt động đầy đủ, được cập nhật hàng tháng</li>
+                                    <li><strong>Quyền tham gia:</strong> Họp HĐQT định kỳ hàng quý và các cuộc họp đặc biệt khi cần</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-semibold">Minh Bạch &amp; Báo Cáo</h6>
+                                <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                    <li><strong>Báo cáo tài chính:</strong> Hàng tháng, có đối chiếu với kế hoạch</li>
+                                    <li><strong>Báo cáo hoạt động:</strong> Chi tiết doanh thu, chi phí, marketing</li>
+                                    <li><strong>Họp đánh giá:</strong> Hàng quý, có lộ trình các bước tiếp theo</li>
+                                    <li><strong>Kiểm toán:</strong> Báo cáo tài chính được kiểm toán hàng năm</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Chiến Lược Thoái Vốn (Exit Strategy)</h5>
+                            
+                            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                    <h6 class="font-semibold">Phương án 1: Mua lại cổ phần</h6>
+                                    <p class="text-gray-700 mt-2">Nhà sáng lập mua lại cổ phần của nhà đầu tư sau 3-5 năm với giá thỏa thuận hoặc dựa trên định giá thị trường.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                    <h6 class="font-semibold">Phương án 2: Bán cho nhà đầu tư khác</h6>
+                                    <p class="text-gray-700 mt-2">Chuyển nhượng cổ phần cho nhà đầu tư mới hoặc quỹ đầu tư khi công ty đạt quy mô lớn hơn.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                    <h6 class="font-semibold">Phương án 3: Bán cho đối tác chiến lược</h6>
+                                    <p class="text-gray-700 mt-2">Bán toàn bộ hoặc một phần công ty cho các tập đoàn F&amp;B lớn muốn tham nhập thị trường cơm tấm.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Chiến Lược Gọi Vốn Các Giai Đoạn Tiếp Theo</h5>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-semibold">Giai đoạn 2 (Nảy Mầm)</h6>
+                                <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                    <li>Tái cấu trúc, định giá lại sau 6 tháng vận hành chi nhánh 2</li>
+                                    <li>Gọi vốn cho chi nhánh 3-5</li>
+                                    <li>Phương pháp định giá: Dựa trên EBITDA và hệ số ngành F&amp;B</li>
+                                    <li>Cổ đông hiện tại có quyền ưu tiên đầu tư theo tỷ lệ</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-semibold">Giai đoạn 3 (Phát Triển)</h6>
+                                <ul class="list-disc pl-5 mb-3 text-gray-700">
+                                    <li>Phát triển mô hình nhượng quyền</li>
+                                    <li>Chuẩn hóa quy trình vận hành và thương hiệu</li>
+                                    <li>Xây dựng hệ thống đào tạo và kiểm soát chất lượng</li>
+                                    <li>Phương thức thoái vốn đa dạng hơn, bao gồm M&amp;A với các tập đoàn F&amp;B lớn</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="font-semibold text-teal-dark mb-3">Chi Tiết Về Dự Báo ROI</h5>
+                            
+                            <div class="chart-container">
+                                <canvas id="roiChart" width="1200" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1200px;"></canvas>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mt-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Thời Gian Thu Hồi Vốn</h6>
+                                    <p class="text-gray-700">Dựa trên kết quả kinh doanh chi nhánh 1, dự kiến chi nhánh 2 sẽ:</p>
+                                    <ul class="list-disc pl-5 mt-2 text-gray-700">
+                                        <li>Đạt điểm hòa vốn sau 5-6 tháng hoạt động</li>
+                                        <li>Bắt đầu có lợi nhuận ổn định từ tháng thứ 7-8</li>
+                                        <li>Hoàn vốn đầu tư ban đầu sau 18-24 tháng</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Chi Tiết Lợi Nhuận Dự Kiến</h6>
+                                    <ul class="list-disc pl-5 text-gray-700">
+                                        <li>ROI năm đầu: 10-15% (sau khi đạt điểm hòa vốn)</li>
+                                        <li>ROI năm thứ hai: 20-30%</li>
+                                        <li>ROI năm thứ ba trở đi: 30-40%</li>
+                                        <li>Lợi nhuận tích lũy sau 3 năm: 60-85% tổng vốn đầu tư</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expansion Economics -->
+        <section class="mb-12">
+            <div class="section-card">
+                <div class="section-header flex justify-between items-center">
+                    <h3 class="text-xl font-bold">KINH TẾ HỌC MỞ RỘNG: HIỆU ỨNG NHÂN BỘI</h3>
+                    <button class="btn-detail" onclick="toggleSection(&#39;economics-detail&#39;)">Xem Chi Tiết <i class="fas fa-chevron-down"></i></button>
+                </div>
+                
+                <div class="section-body">
+                    <!-- Summary Section -->
+                    <div class="mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <h5 class="font-semibold mb-2">Tối Ưu Hóa Chi Phí Chiến Lược</h5>
+                            <p class="text-gray-700">Chi phí cố định giảm từ <span class="font-semibold text-red-500">52%</span> xuống <span class="font-semibold text-green-500">36%</span> doanh thu khi quy mô tăng.</p>
+                            <div class="w-full bg-gray-200 h-4 rounded-full mt-2 overflow-hidden">
+                                <div class="bg-green-500 h-full rounded-full" style="width: 36%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                <h5 class="font-semibold mb-2">Đòn Bẩy Chuỗi Cung Ứng</h5>
+                                <p class="text-gray-700">Sức mua lớn giảm chi phí nguyên liệu 10-15%, tạo lợi thế cạnh tranh về giá thành.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                <h5 class="font-semibold mb-2">Khuếch Đại Giá Trị Thương Hiệu</h5>
+                                <p class="text-gray-700">Mỗi chi nhánh mới tăng nhận diện thương hiệu, giảm chi phí quảng cáo trên mỗi đơn vị.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-primary">
+                                <h5 class="font-semibold mb-2">Hiệu Quả Hạ Tầng Công Nghệ</h5>
+                                <p class="text-gray-700">Chi phí phát triển công nghệ một lần được phân bổ cho nhiều chi nhánh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Section -->
+                <div id="economics-detail" class="detail-section" style="">
+                    <div class="border-t border-gray-200 p-6">
+                        <h4 class="text-lg font-semibold mb-4">CHI TIẾT KINH TẾ HỌC MỞ RỘNG</h4>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Tối Ưu Hóa Chi Phí Chiến Lược</h5>
+                            
+                            <div class="chart-container">
+                                <canvas id="costOptimizationChart" width="1200" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1200px;"></canvas>
+                            </div>
+                            
+                            <ul class="list-disc pl-5 mb-4 mt-4 text-gray-700">
+                                <li><strong>Chi phí cố định giảm dần theo tỷ lệ:</strong> Từ 52% xuống 36% doanh thu khi quy mô tăng</li>
+                                <li><strong>Chi phí quản lý trung tâm được phân bổ:</strong> Mỗi chi nhánh mới chỉ làm tăng chi phí quản lý trung tâm thêm 10-15%</li>
+                                <li><strong>Tối ưu hóa nhân sự:</strong> Mô hình hoạt động đã được chuẩn hóa, giảm thời gian đào tạo và học tập</li>
+                                <li><strong>Bằng chứng từ dữ liệu:</strong> Tỷ lệ chi phí/doanh thu giảm đều từ tháng 7/2024 đến tháng 1/2025</li>
+                            </ul>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tháng</th>
+                                            <th>Chi Phí Cố Định</th>
+                                            <th>% Doanh Thu</th>
+                                            <th>Chi Phí Biến Đổi</th>
+                                            <th>% Doanh Thu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>T7/2024</td>
+                                            <td>124.7 triệu</td>
+                                            <td class="text-red-500">52.1%</td>
+                                            <td>95.1 triệu</td>
+                                            <td>39.8%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T11/2024</td>
+                                            <td>124.9 triệu</td>
+                                            <td class="text-orange-500">44.6%</td>
+                                            <td>154.5 triệu</td>
+                                            <td>55.1%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T1/2025</td>
+                                            <td>116.5 triệu</td>
+                                            <td class="text-green-500">36.0%</td>
+                                            <td>200.2 triệu</td>
+                                            <td>61.8%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Đòn Bẩy Chuỗi Cung Ứng</h5>
+                            
+                            <ul class="list-disc pl-5 mb-4 text-gray-700">
+                                <li><strong>Sức mua lớn:</strong> Giảm chi phí nguyên liệu 10-15% khi đặt hàng với khối lượng lớn</li>
+                                <li><strong>Đối tác nhà cung cấp ưu tiên:</strong> Thiết lập quan hệ đối tác với nhà cung cấp lớn, được hưởng chính sách chiết khấu theo khối lượng</li>
+                                <li><strong>Quy trình chuẩn hóa:</strong> Giảm lãng phí nguyên liệu từ 12% xuống còn 5%</li>
+                                <li><strong>Dự trữ tối ưu:</strong> Hệ thống quản lý tồn kho hiệu quả giúp giảm chi phí dự trữ và tổn thất</li>
+                            </ul>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Ví dụ: Chi phí nguyên liệu chính</h6>
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left py-2">Nguyên liệu</th>
+                                                <th class="text-right py-2">Giá thông thường</th>
+                                                <th class="text-right py-2">Giá đại lượng</th>
+                                                <th class="text-right py-2">Tiết kiệm</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-1">Thịt heo</td>
+                                                <td class="text-right">120,000đ/kg</td>
+                                                <td class="text-right">102,000đ/kg</td>
+                                                <td class="text-right text-green-500">15%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-1">Gạo tấm</td>
+                                                <td class="text-right">18,000đ/kg</td>
+                                                <td class="text-right">15,300đ/kg</td>
+                                                <td class="text-right text-green-500">15%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-1">Rau củ</td>
+                                                <td class="text-right">Theo mùa</td>
+                                                <td class="text-right">Giảm 10%</td>
+                                                <td class="text-right text-green-500">10%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Tác động đến lợi nhuận gộp</h6>
+                                    <p class="mb-2">Với nguyên liệu chiếm khoảng 35-40% tổng chi phí, việc giảm chi phí nguyên liệu 10-15% sẽ:</p>
+                                    <ul class="list-disc pl-5 text-gray-700">
+                                        <li>Tăng biên lợi nhuận gộp thêm 3.5-6%</li>
+                                        <li>Đem lại lợi thế cạnh tranh về giá hoặc chất lượng</li>
+                                        <li>Tạo đệm an toàn khi giá nguyên liệu biến động</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Khuếch Đại Giá Trị Thương Hiệu</h5>
+                            
+                            <ul class="list-disc pl-5 mb-4 text-gray-700">
+                                <li><strong>Marketing liên chi nhánh:</strong> Giảm chi phí thu hút khách hàng khi thương hiệu được nhận diện rộng rãi</li>
+                                <li><strong>Hiệu ứng mạng lưới:</strong> Mỗi chi nhánh mới tăng độ phủ thương hiệu cho toàn hệ thống</li>
+                                <li><strong>Ngân sách marketing chung:</strong> Chi phí quảng cáo được phân bổ cho nhiều điểm bán, tăng ROI marketing</li>
+                                <li><strong>Dữ liệu khách hàng phong phú:</strong> Cơ sở dữ liệu khách hàng lớn hơn cho phép phân tích và tiếp thị chính xác hơn</li>
+                            </ul>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Chi phí thu hút khách hàng mới</h6>
+                                    <div class="chart-container h-48">
+                                        <canvas id="customerAcquisitionChart" width="556" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 556px;"></canvas>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Tác động thực tế</h6>
+                                    <ul class="list-disc pl-5 text-gray-700">
+                                        <li>Chi phí marketing giảm từ 8% xuống 2% doanh thu khi thương hiệu được nhận diện</li>
+                                        <li>Tỷ lệ chuyển đổi từ quảng cáo tăng 30% khi thương hiệu đã quen thuộc</li>
+                                        <li>Tiếp cận khách hàng mới dễ dàng hơn thông qua giới thiệu từ khách hàng hiện tại</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Tích Lũy Trí Tuệ Vận Hành</h5>
+                            
+                            <ul class="list-disc pl-5 mb-4 text-gray-700">
+                                <li><strong>Mỗi chi nhánh mới hưởng lợi từ kinh nghiệm:</strong> Giảm thời gian "thử và sai", tối ưu hóa quy trình từ đầu</li>
+                                <li><strong>Dữ liệu hiệu suất từ nhiều điểm bán:</strong> Cho phép phân tích so sánh và áp dụng best practices</li>
+                                <li><strong>Đào tạo chéo và cơ hội thăng tiến:</strong> Giúp giữ chân nhân viên giỏi và tạo động lực</li>
+                                <li><strong>Quản lý đa chi nhánh chuyên nghiệp:</strong> Hệ thống quản lý và giám sát hiệu quả hơn</li>
+                            </ul>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h6 class="font-semibold mb-2">Ví dụ về cải tiến quy trình từ chi nhánh 1</h6>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h6 class="font-medium text-teal-dark">Thời gian phục vụ</h6>
+                                        <p class="text-gray-700 text-sm">Giảm từ 15 phút xuống 8 phút sau 6 tháng vận hành</p>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-medium text-teal-dark">Tỷ lệ lỗi đơn hàng</h6>
+                                        <p class="text-gray-700 text-sm">Giảm từ 7% xuống còn 1.5% qua tối ưu quy trình</p>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-medium text-teal-dark">Lãng phí nguyên liệu</h6>
+                                        <p class="text-gray-700 text-sm">Giảm từ 12% xuống 5% qua chuẩn hóa định lượng</p>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-medium text-teal-dark">Năng suất nhân viên</h6>
+                                        <p class="text-gray-700 text-sm">Tăng 35% qua cải tiến quy trình làm việc</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-teal-dark mb-3">Hiệu Quả Cơ Sở Hạ Tầng Công Nghệ</h5>
+                            
+                            <ul class="list-disc pl-5 mb-4 text-gray-700">
+                                <li><strong>Chi phí phát triển một lần:</strong> Zalo Mini App, hệ thống quản lý đơn hàng, website được phân bổ cho nhiều chi nhánh</li>
+                                <li><strong>Tích hợp giao hàng chuẩn hóa:</strong> Kết nối Grab, Shopee Food, Be được tận dụng cho tất cả chi nhánh</li>
+                                <li><strong>Phân tích dữ liệu tập trung:</strong> Insight từ nhiều chi nhánh giúp ra quyết định tốt hơn</li>
+                                <li><strong>Tự động hóa quy trình:</strong> Đầu tư công nghệ một lần, áp dụng cho toàn hệ thống</li>
+                            </ul>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Chi phí công nghệ phân bổ</h6>
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left py-2">Hạng mục</th>
+                                                <th class="text-right py-2">Chi phí tổng</th>
+                                                <th class="text-right py-2">1 chi nhánh</th>
+                                                <th class="text-right py-2">5 chi nhánh</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-1">Zalo Mini App</td>
+                                                <td class="text-right">40 triệu</td>
+                                                <td class="text-right">40 triệu</td>
+                                                <td class="text-right">8 triệu</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-1">POS &amp; Quản lý</td>
+                                                <td class="text-right">12.5 triệu</td>
+                                                <td class="text-right">12.5 triệu</td>
+                                                <td class="text-right">12.5 triệu</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-1">Website &amp; Branding</td>
+                                                <td class="text-right">25 triệu</td>
+                                                <td class="text-right">25 triệu</td>
+                                                <td class="text-right">5 triệu</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h6 class="font-semibold mb-2">Lợi ích công nghệ theo quy mô</h6>
+                                    <ul class="list-disc pl-5 text-gray-700">
+                                        <li>Cơ sở dữ liệu khách hàng tập trung và phong phú</li>
+                                        <li>Phân tích nhu cầu và hành vi khách hàng chính xác hơn</li>
+                                        <li>Tối ưu hóa menu và giá dựa trên phân tích dữ liệu</li>
+                                        <li>Nâng cao trải nghiệm khách hàng thông qua ứng dụng và tiện ích</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="font-semibold text-teal-dark mb-3">Phân Tích Cạnh Tranh</h5>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Thương hiệu</th>
+                                            <th>Điểm mạnh</th>
+                                            <th>Điểm yếu</th>
+                                            <th>Lợi thế cạnh tranh của Cơm Tấm Cám</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Phúc Lộc Thọ</td>
+                                            <td>Thương hiệu lâu đời, địa điểm đắc địa</td>
+                                            <td>Chậm đổi mới, ít ứng dụng công nghệ</td>
+                                            <td>Tiếp cận số hóa, dữ liệu khách hàng, giao hàng tận nơi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kiều Giang</td>
+                                            <td>Chất lượng cao, khách hàng trung thành</td>
+                                            <td>Giá cao, quy mô nhỏ, ít chi nhánh</td>
+                                            <td>Giá cả cạnh tranh hơn, quy mô mở rộng nhanh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thuận Kiều</td>
+                                            <td>Nhiều chi nhánh, tiếp cận đa dạng khách hàng</td>
+                                            <td>Chất lượng không đồng đều giữa các chi nhánh</td>
+                                            <td>Quy trình chuẩn hóa, đảm bảo chất lượng đồng nhất</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ba Ghiền</td>
+                                            <td>Hương vị đặc trưng, cơ sở khách hàng lớn</td>
+                                            <td>Không gian hạn chế, ít đổi mới menu</td>
+                                            <td>Không gian thoáng đãng, đa dạng lựa chọn, thường xuyên cập nhật</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print text-xl"></i>
+    </button>
+
+    <script>
+        // Toggle detail sections
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const button = event.currentTarget;
+            
+            if (section.style.maxHeight) {
+                section.style.maxHeight = null;
+                button.innerHTML = 'Xem Chi Tiết <i class="fas fa-chevron-down"></i>';
+            } else {
+                section.style.maxHeight = section.scrollHeight + 1000 + "px"; // Add extra space for content expansion
+                button.innerHTML = 'Thu Gọn <i class="fas fa-chevron-up"></i>';
+            }
+        }
+        
+        // Charts initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['T7/2024', 'T8/2024', 'T9/2024', 'T10/2024', 'T11/2024', 'T12/2024', 'T1/2025'],
+                    datasets: [{
+                        label: 'Doanh Thu (triệu VNĐ)',
+                        data: [106, 150, 151, 192, 310, 381, 359],
+                        backgroundColor: 'rgba(32, 178, 170, 0.2)',
+                        borderColor: 'rgba(32, 178, 170, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Lợi Nhuận (triệu VNĐ)',
+                        data: [-132, -89, -75, -27, 30, 67, 35],
+                        backgroundColor: 'rgba(255, 140, 0, 0.2)',
+                        borderColor: 'rgba(255, 140, 0, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+            
+            // ROI Chart
+            const roiCtx = document.getElementById('roiChart').getContext('2d');
+            const roiChart = new Chart(roiCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['6 tháng', '12 tháng', '18 tháng', '24 tháng', '30 tháng', '36 tháng'],
+                    datasets: [{
+                        label: 'ROI Tích Lũy (%)',
+                        data: [0, 10, 25, 45, 65, 85],
+                        backgroundColor: 'rgba(32, 178, 170, 0.7)',
+                        borderColor: 'rgba(32, 178, 170, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Phần trăm hoàn vốn (%)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Cost Optimization Chart
+            const costCtx = document.getElementById('costOptimizationChart').getContext('2d');
+            const costChart = new Chart(costCtx, {
+                type: 'line',
+                data: {
+                    labels: ['T7/2024', 'T8/2024', 'T9/2024', 'T10/2024', 'T11/2024', 'T12/2024', 'T1/2025'],
+                    datasets: [{
+                        label: 'Chi Phí Cố Định (% Doanh Thu)',
+                        data: [52.1, 50.3, 48.7, 46.2, 44.6, 39.7, 36.0],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Chi Phí Biến Đổi (% Doanh Thu)',
+                        data: [39.8, 42.5, 44.6, 49.7, 55.1, 59.3, 61.8],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Tổng Chi Phí (% Doanh Thu)',
+                        data: [91.9, 92.8, 93.3, 95.9, 99.7, 99, 97.8],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Phần trăm doanh thu (%)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Customer Acquisition Chart
+            const customerCtx = document.getElementById('customerAcquisitionChart').getContext('2d');
+            const customerChart = new Chart(customerCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['1 chi nhánh', '2 chi nhánh', '3 chi nhánh', '5 chi nhánh'],
+                    datasets: [{
+                        label: 'Chi Phí Thu Hút (% Doanh Thu)',
+                        data: [8, 5, 3.5, 2],
+                        backgroundColor: 'rgba(255, 140, 0, 0.7)',
+                        borderColor: 'rgba(255, 140, 0, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Chi phí (% doanh thu)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body></html>
