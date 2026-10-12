@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hứng thông báo Tấm Cám"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTrangThai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/tvSo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp" />
+
+        <Button android:id="@+id/btnQuyen" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Cấp quyền đọc thông báo" />
+        <Button android:id="@+id/btnPin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tắt tối ưu pin cho app" />
+        <Button android:id="@+id/btnTuChay" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bật Tự khởi chạy (Xiaomi)" />
+        <Button android:id="@+id/btnKiemTra" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kiểm tra kết nối máy chủ" />
+        <Button android:id="@+id/btnGuiLai" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Gửi lại tất cả (48 giờ)" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tin gần nhất"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDanhSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="monospace"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

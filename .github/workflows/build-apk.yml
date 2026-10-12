@@ -1,0 +1,53 @@
+name: Dung APK Hung thong bao
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'app-hung-thong-bao/**'
+      - '.github/workflows/build-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app-hung-thong-bao
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.7'
+
+      - name: Dung APK (debug ky san)
+        run: gradle --no-daemon assembleDebug
+
+      - name: Doi ten APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk HungThongBaoTamCam.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HungThongBaoTamCam
+          path: app-hung-thong-bao/HungThongBaoTamCam.apk
+
+      - name: Phat hanh (link tai co dinh)
+        if: github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: hungtb-latest
+          name: Hứng thông báo Tấm Cám — bản mới nhất
+          body: "APK dựng tự động từ commit ${{ github.sha }}. Tải file HungThongBaoTamCam.apk rồi cài (cho phép nguồn không xác định)."
+          files: app-hung-thong-bao/HungThongBaoTamCam.apk
+          prerelease: false
