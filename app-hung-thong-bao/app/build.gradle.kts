@@ -11,12 +11,17 @@ android {
         applicationId = "vn.comtamcam.hungtb"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 3
+        versionName = "1.2"
     }
 
     signingConfigs {
+        // Chu ky co dinh (hungtb.keystore trong repo) de moi ban deu cai de duoc len nhau
         getByName("debug") {
+            storeFile = rootProject.file("hungtb.keystore")
+            storePassword = "hungtb2026"
+            keyAlias = "hungtb"
+            keyPassword = "hungtb2026"
             enableV1Signing = true
             enableV2Signing = true
             enableV3Signing = true

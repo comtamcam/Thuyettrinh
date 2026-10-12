@@ -15,5 +15,5 @@ object CauHinh {
     )
 
     const val NGUON = "app"
-    const val PHIEN_BAN = "1.1"
+    const val PHIEN_BAN = "1.2"
 }
