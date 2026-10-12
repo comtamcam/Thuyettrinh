@@ -3,6 +3,7 @@ package vn.comtamcam.hungtb
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.util.concurrent.TimeUnit
 
 /** Goi may chu n8n. */
@@ -22,7 +23,9 @@ object MayChu {
             .addQueryParameter("nguon", CauHinh.NGUON)
             .addQueryParameter("khoa_app", tin.khoa)
             .build()
-        val req = Request.Builder().url(url).header("User-Agent", "hungtb/${CauHinh.PHIEN_BAN}").get().build()
+        // Webhook may chu nhan POST (giong MacroDroid): tham so tren query, body rong
+        val req = Request.Builder().url(url).header("User-Agent", "hungtb/${CauHinh.PHIEN_BAN}")
+            .post(ByteArray(0).toRequestBody(null)).build()
         client.newCall(req).execute().use { resp ->
             if (!resp.isSuccessful) throw IllegalStateException("HTTP ${resp.code}")
         }
