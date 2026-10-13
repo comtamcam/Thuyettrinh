@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnKiemTra: Button
 
     private val lamMoi = object : Runnable {
-        override fun run() { capNhat(); handler.postDelayed(this, 3000) }
+        override fun run() { capNhat(); handler.postDelayed(this, 5000) }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         ) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
         }
-        GuardService.batDau(this)
+        if (!GuardService.dangChay) GuardService.batDau(this)
     }
 
     override fun onResume() {

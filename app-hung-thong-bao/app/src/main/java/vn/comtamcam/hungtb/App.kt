@@ -5,6 +5,8 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.util.Log
 import androidx.work.Configuration
+import androidx.work.Constraints
+import androidx.work.NetworkType
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -24,10 +26,13 @@ class App : Application(), Configuration.Provider {
                 setShowBadge(false)
             }
         )
-        // Nhip tim + don hang doi moi 15 phut
-        val hb = PeriodicWorkRequestBuilder<NhipTimWorker>(15, TimeUnit.MINUTES).build()
+        // Nhip tim moi 60 phut (co the trễ 15 phut cho he thong gom chung voi app khac de tiet kiem pin),
+        // chi khi co mang. Tin ngan hang gui len cung duoc may chu tinh la nhip tim.
+        val hb = PeriodicWorkRequestBuilder<NhipTimWorker>(60, TimeUnit.MINUTES, 15, TimeUnit.MINUTES)
+            .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
+            .build()
         WorkManager.getInstance(this).enqueueUniquePeriodicWork(
-            NhipTimWorker.TEN, ExistingPeriodicWorkPolicy.KEEP, hb
+            NhipTimWorker.TEN, ExistingPeriodicWorkPolicy.UPDATE, hb
         )
     }
 

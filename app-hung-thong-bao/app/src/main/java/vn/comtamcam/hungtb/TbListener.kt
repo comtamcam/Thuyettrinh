@@ -17,7 +17,7 @@ class TbListener : NotificationListenerService() {
         instance = this
         TrangThai.dangNghe = true
         Log.i(TAG, "Listener ket noi")
-        GuardService.batDau(this)
+        if (!GuardService.dangChay) GuardService.batDau(this)
         quetLai()
     }
 
@@ -25,8 +25,10 @@ class TbListener : NotificationListenerService() {
         super.onListenerDisconnected()
         TrangThai.dangNghe = false
         instance = null
-        Log.w(TAG, "Listener mat ket noi — xin ket noi lai")
-        try { requestRebind(android.content.ComponentName(this, TbListener::class.java)) } catch (_: Exception) {}
+        Log.w(TAG, "Listener mat ket noi — xin ket noi lai sau 30 giay")
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            try { requestRebind(android.content.ComponentName(this, TbListener::class.java)) } catch (_: Exception) {}
+        }, 30_000)
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {

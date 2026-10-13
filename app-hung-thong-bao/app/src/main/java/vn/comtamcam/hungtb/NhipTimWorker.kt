@@ -3,15 +3,24 @@ package vn.comtamcam.hungtb
 import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import java.util.Calendar
 
-/** Moi 15 phut: don dep, quet lai thong bao, day hang doi, bao nhip tim len may chu. */
+/**
+ * Moi ~60 phut: don dep, day hang doi neu con, bao nhip tim.
+ * Tiet kiem pin: ngoai gio 6-22h khong bao; vua gui tin that trong 50 phut thi khong bao (tin = nhip).
+ */
 class NhipTimWorker(ctx: Context, p: WorkerParameters) : Worker(ctx, p) {
     override fun doWork(): Result {
         val hd = HangDoi.lay(applicationContext)
         hd.donDep()
-        TbListener.instance?.quetLai()
-        if (hd.soCho() > 0) GuiWorker.day(applicationContext)
-        GuardService.batDau(applicationContext)
+        if (hd.soCho() > 0) {
+            TbListener.instance?.quetLai()
+            GuiWorker.day(applicationContext)
+        }
+        val gio = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        if (gio < 6 || gio >= 22) return Result.success()
+        val guiCuoi = hd.lanGuiCuoi()
+        if (System.currentTimeMillis() - guiCuoi < 50L * 60 * 1000) return Result.success()
         return try {
             MayChu.nhipTim(hd.soCho(), TrangThai.dangNghe)
             TrangThai.nhipCuoi = System.currentTimeMillis()

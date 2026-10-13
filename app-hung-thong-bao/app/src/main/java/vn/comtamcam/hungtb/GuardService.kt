@@ -33,12 +33,19 @@ class GuardService : Service() {
         } else {
             startForeground(1, n)
         }
+        dangChay = true
         return START_STICKY
+    }
+
+    override fun onDestroy() {
+        dangChay = false
+        super.onDestroy()
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
 
     companion object {
+        @Volatile var dangChay: Boolean = false
         fun batDau(ctx: Context) {
             try {
                 ContextCompat.startForegroundService(ctx, Intent(ctx, GuardService::class.java))
