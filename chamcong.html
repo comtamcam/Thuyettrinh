@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chấm công · Cơm Tấm Cám</title>
+<meta name="robots" content="noindex">
+<style>
+body{margin:0;background:#111;color:#eee;font:16px/1.5 -apple-system,system-ui,sans-serif;padding:20px;max-width:520px;margin:auto}
+h1{font-size:22px;margin:0 0 4px}.nho{color:#999;font-size:14px}
+.c{background:#1c1c1e;border-radius:16px;padding:18px;margin:14px 0}
+button{width:100%;padding:16px;border:0;border-radius:14px;background:#10b981;color:#fff;font-size:18px;font-weight:700}
+button:disabled{opacity:.6}#kq{white-space:pre-line;margin-top:12px}.ok{color:#34d399}.loi{color:#f87171}
+a{color:#93c5fd}
+</style></head><body>
+<h1>⏰ Chấm công vào ca</h1>
+<div class="nho" id="sub">Cơm Tấm Cám · bật wifi quán và cho phép định vị rồi bấm.</div>
+<div class="c"><button id="b">Vào ca</button><div id="kq"></div></div>
+<div class="c nho" id="may"></div>
+<div class="nho"><a id="ve" href="#">← Về app lương</a></div>
+<script>
+(function(){
+var API='https://comtamcambot.tino.page/webhook/';
+var p=new URLSearchParams(location.hash.slice(1)),k=p.get('k')||'',thu=p.get('thu')||'';
+var ten={nga:'Nga',tuyen:'Tuyền',trang:'Trang',thai:'Thái',phong:'Phong',thien:'Thiện'};
+var u=k.split('.')[0];
+var ua=navigator.userAgent,ios=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1),
+zl=/Zalo/i.test(ua),fb=/FBAN|FBAV|FB_IAB|Messenger/i.test(ua),tg=/Telegram/i.test(ua);
+document.getElementById('ve').href=API+'ctc-luong?k='+encodeURIComponent(k);
+if(thu){document.querySelector('h1').textContent='📍 Thử định vị';document.getElementById('b').textContent='Bấm để thử';document.getElementById('sub').textContent='Chỉ thử máy có cho lấy vị trí không. Không chấm công, không ghi gì vào lương.';document.getElementById('ve').style.display='none';}
+else if(ten[u])document.getElementById('sub').textContent=ten[u]+' · bật wifi quán và cho phép định vị rồi bấm.';
+document.getElementById('may').textContent='Máy: '+(ios?'iPhone/iPad':/Android/.test(ua)?'Android':'khác')+(zl?' · đang mở trong Zalo':fb?' · đang mở trong Facebook':tg?' · đang mở trong Telegram':'');
+function hien(t,ok){var e=document.getElementById('kq');e.textContent=t;e.className=ok?'ok':'loi'}
+function loi(e){
+ if(zl||fb||tg)return 'Đang mở trong '+(zl?'Zalo':fb?'Facebook':'Telegram')+' nên không lấy được vị trí. Bấm dấu ⋯ → Mở bằng trình duyệt ('+(ios?'Safari':'Chrome')+') rồi bấm lại.';
+ if(e&&e.code===1)return ios?'Máy đang chặn vị trí cho trang này.\n1. Cài đặt → Quyền riêng tư & Bảo mật → Dịch vụ định vị: BẬT, mục “Trang web Safari” chọn “Khi dùng”.\n2. Quay lại Safari, bấm “aA” (hoặc nút bên trái thanh địa chỉ) → Cài đặt trang web → Vị trí → Cho phép.\n3. Tải lại trang rồi bấm lại.':'Máy đang chặn vị trí cho trang này. Bấm ổ khóa cạnh địa chỉ web → Quyền → Vị trí → Cho phép, tải lại trang rồi bấm lại.';
+ if(e&&e.code===3)return 'Lấy vị trí quá lâu. Bật Vị trí chính xác, ra chỗ thoáng rồi bấm lại.';
+ return 'Chưa lấy được vị trí (mã '+(e&&e.code)+'). Bật Vị trí/GPS của điện thoại rồi bấm lại.';
+}
+function kc(a,b){var R=6371000,r=Math.PI/180,x=(b.lat-a.lat)*r,y=(b.lng-a.lng)*r,h=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(y/2)*Math.sin(y/2);return Math.round(2*R*Math.asin(Math.sqrt(h)))}
+function baoThu(o){o.ten=thu;o.ua=ua;fetch(API+'ctc-thu-dinh-vi',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o)}).catch(function(){})}
+var b=document.getElementById('b');
+if(!thu&&!ten[u]){hien('Link thiếu mã đăng nhập. Mở lại từ app lương rồi bấm Vào ca.',false);b.disabled=true;return}
+b.onclick=function(){
+ if(!navigator.geolocation){hien('Máy không hỗ trợ định vị.',false);return}
+ b.disabled=true;b.textContent='Đang lấy vị trí…';hien('',true);var t0=Date.now();
+ navigator.geolocation.getCurrentPosition(function(pos){
+  var c=pos.coords;
+  if(thu){var d=kc({lat:10.7934127,lng:106.7027648},{lat:c.latitude,lng:c.longitude});
+   hien('✅ MÁY LẤY ĐƯỢC VỊ TRÍ — máy này chấm công được.\nCách quán khoảng '+(d>=1000?(d/1000).toFixed(1)+' km':d+' m')+' (sai số '+Math.round(c.accuracy)+' m).',true);
+   b.disabled=false;b.textContent='Thử lại';baoThu({ok:true,kc:d,acc:Math.round(c.accuracy),ms:Date.now()-t0});return}
+  b.textContent='Đang chấm…';
+  fetch(API+'ctc-chamcong',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({k:k,lat:c.latitude,lng:c.longitude,acc:c.accuracy})})
+  .then(function(r){return r.json()}).then(function(j){hien(j.msg||'Đã gửi.',!!j.ok);if(j.ok){b.textContent='Đã chấm ✓'}else{b.disabled=false;b.textContent='Thử lại'}})
+  .catch(function(){hien('Mất mạng, bấm lại.',false);b.disabled=false;b.textContent='Thử lại'});
+ },function(e){hien(loi(e),false);b.disabled=false;b.textContent='Thử lại';if(thu)baoThu({ok:false,code:e.code,msg:String(e.message||''),ms:Date.now()-t0})},
+ {enableHighAccuracy:true,timeout:20000,maximumAge:0});
+};
+})();
+</script></body></html>
